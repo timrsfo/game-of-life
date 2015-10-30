@@ -114,7 +114,7 @@
             <plugin>
                 <groupId>org.easyb</groupId>
                 <artifactId>maven-easyb-plugin</artifactId>
-                <version>1.4</version>
+				<version>${easyb.version}</version>
                 <executions>
                     <execution>
                         <goals>
