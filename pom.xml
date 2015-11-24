@@ -12,6 +12,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <easyb.version>1.4</easyb.version>
         <cobertura.version>2.6</cobertura.version>
+        <pmd.version>3.2</pmd.version>
+        <findbugs.version>2.6</findbugs.version>
         <!-- A workaround for a bug in PMD -->
         <sourceJdk>1.7</sourceJdk>
         <targetJdk>1.7</targetJdk>
@@ -76,6 +78,7 @@
                 </executions>
             </plugin>
             <!-- CODE COVERAGE -->
+<!--
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -97,6 +100,7 @@
                     </execution>
                 </executions>
             </plugin>
+-->
 
             <plugin>
                 <artifactId>maven-release-plugin</artifactId>
@@ -243,9 +247,9 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-pmd-plugin</artifactId>
-                        <version>3.2</version>
+						<version>${pmd.version}</version>
                         <configuration>
-                            <targetJdk>1.6</targetJdk>
+							<targetJdk>${maven.compiler.target}</targetJdk>
                             <aggregate>true</aggregate>
                             <format>xml</format>
                             <!-- CPD options -->
@@ -305,11 +309,13 @@
                                     <artifactId>maven-project-info-reports-plugin</artifactId>
                                     <version>2.7</version>
                                 </plugin>
+<!--
                                 <plugin>
                                     <groupId>org.jacoco</groupId>
                                     <artifactId>jacoco-maven-plugin</artifactId>
                                     <version>0.7.2.201409121644</version>
                                 </plugin>
+-->
                                 <plugin>
                                     <groupId>org.apache.maven.plugins</groupId>
                                     <artifactId>maven-checkstyle-plugin</artifactId>
@@ -321,9 +327,9 @@
                                 <plugin>
                                     <groupId>org.apache.maven.plugins</groupId>
                                     <artifactId>maven-pmd-plugin</artifactId>
-                                    <version>3.2</version>
+									<version>${pmd.version}</version>
                                     <configuration>
-                                        <targetJdk>1.6</targetJdk>
+										<targetJdk>${maven.compiler.target}</targetJdk>
                                         <aggregate>true</aggregate>
                                         <format>xml</format>
                                         <rulesets>
@@ -437,7 +443,7 @@
                         <artifactId>maven-pmd-plugin</artifactId>
                         <version>2.5</version>
                         <configuration>
-                            <targetJdk>1.6</targetJdk>
+							<targetJdk>${maven.compiler.target}</targetJdk>
                             <aggregate>true</aggregate>
                             <format>xml</format>
                             <rulesets>
