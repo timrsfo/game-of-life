@@ -12,6 +12,6 @@ target
 *.ipr
 *.iws
 *.versionsBackup
-
+*.out
 *.iml
 .DS_Store

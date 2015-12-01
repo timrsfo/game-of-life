@@ -261,7 +261,9 @@
                         <version>2.4.0</version>
                         <configuration>
                             <effort>Max</effort>
-                            <xmlOutput>true</xmlOutput>
+                            <findbugsXmlOutput>true</findbugsXmlOutput>
+                            <findbugsXmlWithMessages>true</findbugsXmlWithMessages>
+							<xmlOutput>true</xmlOutput>
                         </configuration>
                     </plugin>
                 </plugins>
