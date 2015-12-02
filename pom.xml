@@ -11,11 +11,12 @@
         <build.number>SNAPSHOT</build.number>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <easyb.version>1.4</easyb.version>
+        <findbugs.version>3.0.3</findbugs.version>
         <cobertura.version>2.6</cobertura.version>
         <!-- A workaround for a bug in PMD -->
         <sourceJdk>1.7</sourceJdk>
         <targetJdk>1.7</targetJdk>
-        <github.account>wakaleo</github.account>
+        <github.account>timrsfo</github.account>
         <thucydides.version>0.9.268</thucydides.version>
         <jelastic.context>gameoflife</jelastic.context>
         <jelastic.environment>wakaleo</jelastic.environment>
@@ -260,7 +261,7 @@
 					<!-- see Jenkins Continuous Integration Cookbook Packt pg 198 -->
                     <plugin>
                         <artifactId>findbugs-maven-plugin</artifactId>
-                        <version>2.4.0</version>
+						<version>${findbugs.version}</version>
                         <configuration>
                             <effort>Max</effort>
                             <findbugsXmlOutput>true</findbugsXmlOutput>
