@@ -267,7 +267,7 @@
                             <findbugsXmlWithMessages>true</findbugsXmlWithMessages>
 							<xmlOutput>true</xmlOutput>
 							<pluginList>
-								http://downloads.sourceforge.net/project/fg-contrib/Current/fg-contrib-4.6.1.jar
+								http://downloads.sourceforge.net/project/fg-contrib/files/OldReleases/fg-contrib-6.2.3.jar
 							</pluginList>
                         </configuration>
                     </plugin>
