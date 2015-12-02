@@ -256,6 +256,8 @@
                     </plugin>
 
                     <!-- FINDBUGS -->
+					<!-- TIMR: adding fb-contrib.jar -->
+					<!-- see Jenkins Continuous Integration Cookbook Packt pg 198 -->
                     <plugin>
                         <artifactId>findbugs-maven-plugin</artifactId>
                         <version>2.4.0</version>
@@ -264,6 +266,9 @@
                             <findbugsXmlOutput>true</findbugsXmlOutput>
                             <findbugsXmlWithMessages>true</findbugsXmlWithMessages>
 							<xmlOutput>true</xmlOutput>
+							<pluginList>
+								http://downloads.sourceforge.net/project/fg-contrib/Current/fg-contrib-4.6.1.jar
+							</pluginList>
                         </configuration>
                     </plugin>
                 </plugins>
