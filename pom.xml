@@ -205,6 +205,13 @@
             <version>1.9.0</version>
             <scope>test</scope>
         </dependency>
+		<!--
+        <dependency>
+			<groupId>org.codehaus.mojo</groupId>
+			<artifactId>findbugs-maven-plugin</artifactId>
+			<version>${findbugs.version}</version>
+        </dependency>
+       -->
     </dependencies>
 
     <modules>
@@ -218,7 +225,6 @@
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
-
         </profile>
         <profile>
             <id>metrics</id>
@@ -260,6 +266,7 @@
 					<!-- TIMR: adding fb-contrib.jar -->
 					<!-- see Jenkins Continuous Integration Cookbook Packt pg 198 -->
                     <plugin>
+						<groupId>org.codehaus.mojo</groupId>
                         <artifactId>findbugs-maven-plugin</artifactId>
 						<version>${findbugs.version}</version>
                         <configuration>
@@ -341,6 +348,24 @@
                                         <ignoreIdentifiers>true</ignoreIdentifiers>
                                     </configuration>
                                 </plugin>
+								<!-- FINDBUGS -->
+								<!-- TIMR: adding fb-contrib.jar -->
+								<!-- see Jenkins Continuous Integration Cookbook Packt pg 198 -->
+								<plugin>
+									<groupId>org.codehaus.mojo</groupId>
+									<artifactId>findbugs-maven-plugin</artifactId>
+									<version>${findbugs.version}</version>
+									<configuration>
+										<effort>Max</effort>
+										<findbugsXmlOutput>true</findbugsXmlOutput>
+										<findbugsXmlWithMessages>true</findbugsXmlWithMessages>
+										<xmlOutput>true</xmlOutput>
+										<pluginList>
+											http://downloads.sourceforge.net/project/fg-contrib/files/OldReleases/fg-contrib-6.2.3.jar
+										</pluginList>
+									</configuration>
+								</plugin>
+								<!--
                                 <plugin>
                                     <groupId>org.codehaus.mojo</groupId>
                                     <artifactId>findbugs-maven-plugin</artifactId>
@@ -350,6 +375,7 @@
                                         <xmlOutput>true</xmlOutput>
                                     </configuration>
                                 </plugin>
+								-->
                                 <plugin>
                                     <artifactId>maven-javadoc-plugin</artifactId>
                                     <version>2.9.1</version>
@@ -464,6 +490,7 @@
                             <configLocation>gameoflife-build/checkstyle.xml</configLocation>
                         </configuration>
                     </plugin>
+					<!--
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>findbugs-maven-plugin</artifactId>
@@ -473,6 +500,7 @@
                             <xmlOutput>true</xmlOutput>
                         </configuration>
                     </plugin>
+                    -->
                     <plugin>
                         <artifactId>maven-javadoc-plugin</artifactId>
                         <version>2.7</version>
